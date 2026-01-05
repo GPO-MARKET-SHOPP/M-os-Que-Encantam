@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mãos que Encantam - Artesanato Afetivo & Exclusivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais atualizados com nova paleta */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --rosa-salmão: #FF9A8B;
+            --rosa-salmão-suave: #FFB4A9;
+            --rosa-salmão-claro: #FFD6D0;
+            --marrom-bege: #D7CCC8;
+            --marrom-claro: #EFEBE9;
+            --marrom-medio: #BCAAA4;
+            --marrom-escuro: #8D6E63;
+            --off-white: #FFF8F6;
+            --cinza-quente: #7C6F64;
+            --borda-arredondada: 16px;
+            --sombra-suave: 0 8px 25px rgba(141, 110, 99, 0.08);
+        }
+        
+        body {
+            background-color: var(--off-white);
+            color: var(--cinza-quente);
+            line-height: 1.7;
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 90px 0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--marrom-escuro);
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--rosa-salmão), var(--rosa-salmão-suave));
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            font-weight: 400;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rosa-salmão), var(--rosa-salmão-suave));
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 154, 139, 0.25);
+            background: linear-gradient(135deg, var(--rosa-salmão-suave), var(--rosa-salmão));
+        }
+        
+        .btn i {
+            margin-right: 10px;
+        }
+        
+        /* Header e Hero atualizados */
+        header {
+            background-color: rgba(255, 248, 246, 0.98);
+            padding: 22px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 20px rgba(141, 110, 99, 0.05);
+            border-bottom: 1px solid rgba(255, 214, 208, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--marrom-escuro);
+            display: flex;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .logo i {
+            color: var(--rosa-salmão);
+            margin-right: 12px;
+            font-size: 2.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 35px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--marrom-escuro);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--rosa-salmão);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--rosa-salmão);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255, 248, 246, 0.9), rgba(255, 248, 246, 0.8));
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1577760258779-e787aed301fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 45px;
+            color: var(--cinza-quente);
+        }
+        
+        /* Seção Diferenciais */
+        .diferenciais {
+            background-color: var(--marrom-claro);
+            border-radius: var(--borda-arredondada);
+            margin: 40px auto;
+            width: 95%;
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .diferencial-item {
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: var(--borda-arredondada);
+            background-color: var(--off-white);
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 214, 208, 0.3);
+        }
+        
+        .diferencial-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(141, 110, 99, 0.12);
+            border-color: var(--rosa-salmão-claro);
+        }
+        
+        .diferencial-item i {
+            font-size: 3.2rem;
+            color: var(--rosa-salmão);
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--rosa-salmão), var(--rosa-salmão-suave));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Seção Produtos */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 45px;
+        }
+        
+        .produto-card {
+            background-color: white;
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 214, 208, 0.3);
+        }
+        
+        .produto-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(141, 110, 99, 0.15);
+        }
+        
+        .produto-img {
+            height: 280px;
+            background-color: var(--marrom-bege);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .produto-img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 248, 246, 0.3) 100%);
+        }
+        
+        .produto-img i {
+            font-size: 4.5rem;
+            color: var(--marrom-medio);
+            opacity: 0.4;
+        }
+        
+        .produto-info {
+            padding: 35px;
+        }
+        
+        /* Seção Prova de Valor */
+        .prova-valor {
+            background-color: var(--marrom-bege);
+            border-radius: var(--borda-arredondada);
+            text-align: center;
+            margin: 40px auto;
+            width: 95%;
+            padding: 80px 40px;
+            box-shadow: var(--sombra-suave);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prova-valor:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--rosa-salmão), var(--rosa-salmão-suave));
+        }
+        
+        .prova-valor blockquote {
+            font-size: 1.9rem;
+            font-style: italic;
+            max-width: 850px;
+            margin: 0 auto 45px;
+            color: var(--marrom-escuro);
+            line-height: 1.6;
+            font-weight: 500;
+            position: relative;
+            padding: 0 30px;
+        }
+        
+        .prova-valor blockquote:before, .prova-valor blockquote:after {
+            color: var(--rosa-salmão);
+            font-size: 3rem;
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .prova-valor blockquote:before {
+            content: "“";
+            top: -20px;
+            left: 0;
+        }
+        
+        .prova-valor blockquote:after {
+            content: "”";
+            bottom: -40px;
+            right: 0;
+        }
+        
+        .assinatura {
+            font-weight: 700;
+            color: var(--rosa-salmão);
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+        
+        /* Seção Contato */
+        .contato {
+            background-color: var(--off-white);
+            border-radius: var(--borda-arredondada);
+            margin: 40px auto;
+            width: 95%;
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .contato-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contato-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .contato-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            padding: 25px 35px;
+            background-color: white;
+            border-radius: var(--borda-arredondada);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 214, 208, 0.3);
+            min-width: 300px;
+        }
+        
+        .contato-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(141, 110, 99, 0.12);
+            border-color: var(--rosa-salmão-claro);
+        }
+        
+        .contato-item i {
+            font-size: 2.5rem;
+            color: var(--rosa-salmão);
+            margin-right: 20px;
+        }
+        
+        .contato-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .contato-item p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--marrom-escuro);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--marrom-escuro);
+            color: var(--off-white);
+            padding: 70px 0 40px;
+            text-align: center;
+            border-top-left-radius: var(--borda-arredondada);
+            border-top-right-radius: var(--borda-arredondada);
+            margin-top: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .footer-logo i {
+            color: var(--rosa-salmão-suave);
+            margin-right: 15px;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero {
+                padding: 160px 0 100px;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .header-container {
+                justify-content: center;
+            }
+            
+            .contato-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .contato-item {
+                min-width: 100%;
+            }
+            
+            .diferenciais, .prova-valor, .contato {
+                width: 100%;
+                border-radius: 0;
+                margin: 0;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Imagens ilustrativas */
+        .produto-img.capivara1 {
+            background: linear-gradient(to bottom right, var(--marrom-claro), var(--marrom-bege));
+        }
+        
+        .produto-img.capivara2 {
+            background: linear-gradient(to bottom right, #E6D5C3, var(--marrom-claro));
+        }
+        
+        .produto-img.capivara3 {
+            background: linear-gradient(to bottom right, #F5E9DA, var(--marrom-bege));
+        }
+        
+        /* Elementos decorativos */
+        .decorative-element {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.05;
+        }
+        
+        .element-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--rosa-salmão);
+            border-radius: 50%;
+            top: 10%;
+            right: 5%;
+        }
+        
+        .element-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--marrom-medio);
+            border-radius: 50%;
+            bottom: 15%;
+            left: 8%;
+        }
+        
+        /* Estilo para tags de produto */
+        .produto-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--rosa-salmão);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(255, 154, 139, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos decorativos de fundo -->
+    <div class="decorative-element element-1"></div>
+    <div class="decorative-element element-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hands-heart"></i>
+                <span>Mãos que Encantam</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#produtos">Nossas Peças</a></li>
+                    <li><a href="#contato">Encomendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <h1>Presentes que guardam histórias, feitos à mão com carinho</h1>
+            <p>Descubra peças únicas de artesanato que nascem do cuidado manual. Pelúcias de crochê em estilo amigurumi, cadernos personalizados e criações exclusivas que transformam momentos em memórias tangíveis.</p>
+            <a href="#contato" class="btn">
+                <i class="fas fa-heart"></i> Encomendar Peça Exclusiva
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section id="diferenciais" class="diferenciais">
+        <div class="container">
+            <h2>O que torna nossas peças especiais?</h2>
+            <div class="diferenciais-grid">
+                <div class="diferencial-item fade-in">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Feito com carinho artesanal</h3>
+                    <p>Cada ponto é cuidadosamente criado à mão, com dedicação e atenção que apenas o trabalho artesanal pode oferecer.</p>
+                </div>
+                <div class="diferencial-item fade-in">
+                    <i class="fas fa-gem"></i>
+                    <h3>Peças únicas e exclusivas</h3>
+                    <p>Não há duas peças iguais. Cada criação tem suas particularidades, tornando-a exclusiva e especial para quem a recebe.</p>
+                </div>
+                <div class="diferencial-item fade-in">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Materiais de qualidade premium</h3>
+                    <p>Selecionamos os melhores fios, tecidos e materiais para garantir durabilidade, maciez e uma experiência tátil única.</p>
+                </div>
+                <div class="diferencial-item fade-in">
+                    <i class="fas fa-search-plus"></i>
+                    <h3>Detalhes que encantam</h3>
+                    <p>Do primeiro ao último ponto, cada detalhe é pensado para criar peças que transmitem afeto e cuidado em sua essência.</p>
+                </div>
+                <div class="diferencial-item fade-in">
+                    <i class="fas fa-palette"></i>
+                    <h3>Personalização única</h3>
+                    <p>Criamos peças sob medida, com cores, temas e detalhes especiais que tornam seu presente ainda mais significativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <h2>Nossas Criações Artesanais</h2>
+            <div class="produtos-grid">
+                <div class="produto-card fade-in">
+                    <div class="produto-img capivara1">
+                        <div class="produto-tag">Mais Procurado</div>
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Pelúcias Artesanais de Crochê</h3>
+                        <p>Amigurumis feitos com técnica apurada, fios premium e acabamento impecável. Nossas capivarinhas artesanais são especialmente fofas e bem acabadas, perfeitas para presentear, decorar ou colecionar. Cada pelúcia é uma companheira única, cheia de personalidade.</p>
+                    </div>
+                </div>
+                <div class="produto-card fade-in">
+                    <div class="produto-img capivara2">
+                        <div class="produto-tag">Personalizável</div>
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Cadernos Personalizados</h3>
+                        <p>Cadernos artesanais com capas exclusivas, incluindo nossas adoráveis capivaras em diferentes cenários. Criados com tecidos especiais, papéis premium e detalhes únicos. Personalizamos com nomes, datas ou temas específicos para transformar um simples caderno em uma memória tangível.</p>
+                    </div>
+                </div>
+                <div class="produto-card fade-in">
+                    <div class="produto-img capivara3">
+                        <div class="produto-tag">Colecionável</div>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Outras Peças Exclusivas</h3>
+                        <p>Além das pelúcias e cadernos, criamos uma variedade de itens exclusivos como chaveiros, porta-copos, enfeites e peças decorativas com temas naturais e animais. Cada criação nasce da inspiração do momento e do cuidado artesanal, sempre com a qualidade que nos diferencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Prova de Valor -->
+    <section class="prova-valor">
+        <div class="container fade-in">
+            <blockquote>
+                "Cada peça que criamos carrega em seus pontos o tempo, o cuidado e o amor dedicados em sua confecção. Não é produção em massa, é arte que nasce das mãos. É a materialização de sentimentos, memórias e histórias que ganham forma através de fios e tecidos. Ao adquirir uma peça artesanal, você leva para casa muito mais que um objeto - leva uma parte da alma de quem criou."
+            </blockquote>
+            <p class="assinatura">— Mãos que Encantam</p>
+            <a href="#contato" class="btn">
+                <i class="fas fa-comments"></i> Conversar sobre sua peça especial
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div class="container contato-container fade-in">
+            <h2>Vamos criar algo especial juntos?</h2>
+            <p style="text-align: center; max-width: 800px; margin-bottom: 40px;">Entre em contato para encomendar, personalizar uma peça única ou simplesmente conversar sobre sua ideia. Estamos aqui para transformar seus sentimentos em arte.</p>
+            
+            <div class="contato-info">
+                <div class="contato-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+55 (11) 97182-7725</p>
+                        <small style="font-weight: normal; color: var(--cinza-quente);">Respondemos em até 2 horas</small>
+                    </div>
+                </div>
+                <div class="contato-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>E-mail comercial</h3>
+                        <p>contato.felipe2958@gmail.com</p>
+                        <small style="font-weight: normal; color: var(--cinza-quente);">Respondemos em até 24 horas</small>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 50px; font-style: italic; text-align: center; max-width: 700px; color: var(--marrom-escuro);">
+                Conte-nos sua história, quem vai receber o presente, e criaremos algo verdadeiramente único e cheio de significado.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-hands-heart"></i> Mãos que Encantam
+            </div>
+            <p style="max-width: 600px; margin: 0 auto 20px;">Artesanato feito com carinho, cuidado e dedicação em cada detalhe</p>
+            <p>Pelúcias artesanais • Cadernos personalizados • Peças únicas com alma</p>
+            <div class="copyright">
+                &copy; 2023 Mãos que Encantam. Todos os direitos reservados.<br>
+                Cada peça é única, assim como você.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animação de aparecimento ao rolar
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animação
+        document.querySelectorAll('.diferencial-item, .produto-card, .fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Adicionar classe de animação após o carregamento
+        window.addEventListener('load', () => {
+            document.querySelector('.hero .container').classList.add('fade-in');
+        });
+        
+        // Efeito de destaque no header ao rolar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 8px 25px rgba(141, 110, 99, 0.1)';
+                header.style.padding = '15px 0';
+            } else {
+                header.style.boxShadow = '0 3px 20px rgba(141, 110, 99, 0.05)';
+                header.style.padding = '22px 0';
+            }
+        });
+    </script>
+</body>
+</html>
